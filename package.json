@@ -1,0 +1,21 @@
+{
+  "name": "tech-notes",
+  "version": "1.0.0",
+  "private": true,
+  "license": "MIT",
+  "workspaces": [
+    "src-client",
+    "src-server"
+  ],
+  "scripts": {
+    "client": "yarn workspace @tech-notes/src-client start",
+    "server": "yarn workspace @tech-notes/src-server serve",
+    "build-client": "yarn workspace @tech-notes/src-client  build",
+    "build-server": "yarn workspace @tech-notes/src-server build",
+    "start": "concurrently --kill-others-on-fail \"yarn client\"  \"yarn server\"",
+    "start:server": "yarn workspace @tech-notes/src-server start"
+  },
+  "dependencies": {
+    "concurrently": "^7.6.0"
+  }
+}
