@@ -10,8 +10,8 @@ Logger.info(`DEVELOPMENT MODE`);
   try {
     const { result } = concurrently(
       [
-        { name: chalk.magenta("server"), command: "npm run start-server" },
-        { name: chalk.cyan("client"), command: "npm run start-react" },
+        { name: chalk.magenta("server"), command: "yarn server" },
+        { name: chalk.cyan("client"), command: "yarn client" },
       ],
       {
         prefix: "name",
@@ -38,4 +38,3 @@ Logger.info(`DEVELOPMENT MODE`);
     process.exit(0);
   }
 })();
-

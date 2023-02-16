@@ -42,9 +42,9 @@ app.all("*", (req, res) => {
 app.use(errorHandler);
 
 mongoose.connection.once("open", () => {
-  console.log("[info] Connected to MongoDB");
+  console.log("connected to MongoDB");
   app.listen(process.env.PORT, () => {
-    console.log(`[info] server running on port ${process.env.PORT}`);
+    console.log(`server running on port ${process.env.PORT}`);
   });
 });
 
@@ -55,3 +55,4 @@ mongoose.connection.on("error", (err) => {
     "mongoErrLog.log"
   );
 });
+

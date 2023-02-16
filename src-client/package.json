@@ -2,6 +2,7 @@
   "name": "@tech-notes/src-client",
   "private": true,
   "version": "1.0.0",
+  "proxy": "http://localhost:3500",
   "scripts": {
     "start": "vite",
     "build": "vite build",
@@ -20,3 +21,4 @@
     "vite": "^4.1.0"
   }
 }
+
