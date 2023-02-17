@@ -20,24 +20,23 @@ export const router = createBrowserRouter([
         path: "login",
         element: <Login />,
       },
-    ],
-  },
-
-  {
-    path: "/dash",
-    element: <DashLayout />,
-    children: [
       {
-        index: true,
-        element: <Welcome />,
-      },
-      {
-        path: "notes",
-        element: <NotesList />,
-      },
-      {
-        path: "users",
-        element: <UsersList />,
+        path: "dash",
+        element: <DashLayout />,
+        children: [
+          {
+            index: true,
+            element: <Welcome />,
+          },
+          {
+            path: "notes",
+            element: <NotesList />,
+          },
+          {
+            path: "users",
+            element: <UsersList />,
+          },
+        ],
       },
     ],
   },
