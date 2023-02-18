@@ -1,26 +1,37 @@
-const chalk = require("chalk");
+const chalk = require('chalk');
 
 const Logger = {
   clear() {
-    process.stdout.write("\\033c");
+    process.stdout.write('\\033c');
   },
 
   info() {
-    console.log.apply(console, [`${chalk.blue("[info]")}`, ...arguments]);
+    console.log.apply(console, [
+      `${chalk.blue('[info]')}`,
+      ...arguments,
+    ]);
   },
 
   error() {
-    console.log.apply(console, [`${chalk.red("[error]")}`, ...arguments]);
+    console.log.apply(console, [
+      `${chalk.red('[error]')}`,
+      ...arguments,
+    ]);
   },
 
   warn() {
-    console.log.apply(console, [`${chalk.yellow("[warning]")}`, ...arguments]);
+    console.log.apply(console, [
+      `${chalk.yellow('[warning]')}`,
+      ...arguments,
+    ]);
   },
 
   success() {
-    console.log.apply(console, [`${chalk.green("[success]")}`, ...arguments]);
+    console.log.apply(console, [
+      `${chalk.green('[success]')}`,
+      ...arguments,
+    ]);
   },
 };
 
 module.exports = Logger;
-

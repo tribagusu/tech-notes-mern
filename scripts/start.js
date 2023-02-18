@@ -1,7 +1,7 @@
-const concurrently = require("concurrently");
-const chalk = require("chalk");
-const Logger = require("./helpers/logger");
-const ms = require("ms");
+const concurrently = require('concurrently');
+const chalk = require('chalk');
+const Logger = require('./helpers/logger');
+const ms = require('ms');
 const start = new Date().getTime();
 
 Logger.info(`DEVELOPMENT MODE`);
@@ -10,31 +10,39 @@ Logger.info(`DEVELOPMENT MODE`);
   try {
     const { result } = concurrently(
       [
-        { name: chalk.magenta("server"), command: "yarn start:server" },
-        { name: chalk.cyan("client"), command: "yarn start:client" },
+        {
+          name: chalk.magenta('server'),
+          command: 'yarn start:server',
+        },
+        {
+          name: chalk.cyan('client'),
+          command: 'yarn start:client',
+        },
       ],
       {
-        prefix: "name",
-        killOthers: ["failure"],
+        prefix: 'name',
+        killOthers: ['failure'],
         restartTries: 0,
-      }
+      },
     );
 
     result.then(
       (data) => {
         const finish = new Date().getTime();
-        Logger.success(`development was run for ${ms(finish - start)}`);
+        Logger.success(
+          `development was run for ${ms(finish - start)}`,
+        );
         process.exit(0);
       },
       (err) => {
         console.log(err);
         Logger.error(`error occurred`);
         process.exit(0);
-      }
+      },
     );
   } catch (err) {
     Logger.error(err);
-    Logger.error("error occurred");
+    Logger.error('error occurred');
     process.exit(0);
   }
 })();
