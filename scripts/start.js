@@ -10,8 +10,8 @@ Logger.info(`DEVELOPMENT MODE`);
   try {
     const { result } = concurrently(
       [
-        { name: chalk.magenta("server"), command: "yarn server" },
-        { name: chalk.cyan("client"), command: "yarn client" },
+        { name: chalk.magenta("server"), command: "yarn start:server" },
+        { name: chalk.cyan("client"), command: "yarn start:client" },
       ],
       {
         prefix: "name",

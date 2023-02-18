@@ -8,12 +8,14 @@
     "src-server"
   ],
   "scripts": {
-    "client": "yarn workspace @tech-notes/src-client start",
-    "server": "yarn workspace @tech-notes/src-server serve",
-    "build-client": "yarn workspace @tech-notes/src-client  build",
-    "build-server": "yarn workspace @tech-notes/src-server build",
+    "client": "yarn workspace @tech-notes/src-client",
+    "server": "yarn workspace @tech-notes/src-server",
+    "start:client": "yarn client start",
+    "start:server": "yarn server serve",
+    "build-client": "yarn client build",
+    "build-server": "yarn server build",
     "start": "node ./scripts/start.js",
-    "start:server": "yarn workspace @tech-notes/src-server start"
+    "build": "node ./scripts/build.js"
   },
   "dependencies": {
     "concurrently": "^7.6.0"
